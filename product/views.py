@@ -67,7 +67,7 @@ class ProductByCategory(APIView):
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
-class ProductBrand(APIView):
+class ProoductBrand(APIView):
     def get(self, request, brand_id:int):
         obj = Product.objects.filter(brand=brand_id)
         serializers = ProductSerializer(obj, many=True)
