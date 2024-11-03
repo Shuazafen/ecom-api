@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission
 
 # Create your models here.
+
+# the model we are using here is customizing our abstract user and there are different groups with different permissions
 class Customer(AbstractUser):
     phone_number = models.CharField(max_length=15)
 

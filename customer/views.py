@@ -9,6 +9,8 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.authentication import TokenAuthentication
 from django.contrib.auth import login, logout, authenticate
 
+# class based view is used here with rest-framework APIView 
+
 class Signup(APIView):
     def post(self, request, format=None):
         serializers = UserSerializer(data=request.data)

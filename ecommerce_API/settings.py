@@ -23,7 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ax9ydd_%h2np+)&t=!elrmwjychj74(bu0hz6nbhez)4w3+y42'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+# allowed and web service to be able to host my api
 
 ALLOWED_HOSTS = ['*']
 
@@ -52,8 +54,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # added whitenoise middleware settings from the whitenoise documentation on whitenoise.pypi
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # added corsheaders middleware settings from corsheaders documentation on corsheaders.pypi
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -62,8 +66,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# this allows access to my api from all urls
+
 CORS_ORIGIN_ALLOW_ALL = True
 
+# the methods that are allowed with my api
 CORS_ALLOW_METHODS = (
     "DELETE",
     "GET",

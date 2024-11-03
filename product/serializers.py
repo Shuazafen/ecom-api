@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Category, Brand, Product, ProductImage
 
+# read comments on serilizer.py in customer app
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category

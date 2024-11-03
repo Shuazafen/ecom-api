@@ -1,7 +1,10 @@
 from django.db import models
 import uuid
 
+
 # Create your models here.
+
+# uuid is a special id field which makes the id longer than the usual and also more secure 
 class Category(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=55)

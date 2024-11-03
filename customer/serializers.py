@@ -5,6 +5,8 @@ import random as r
 import string as s
 import re
 
+# this is the serializer where most of our logic is passed (ps it is written in python readable code)
+
 def check_password(password):
     password_pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
     match = re.match(password_pattern, string=password)

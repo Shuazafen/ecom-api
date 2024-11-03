@@ -67,11 +67,13 @@ class ProductByCategory(APIView):
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
-class ProoductBrand(APIView):
+class ProductBrand(APIView):
     def get(self, request, brand_id:int):
         obj = Product.objects.filter(brand=brand_id)
         serializers = ProductSerializer(obj, many=True)
         return Response(serializers.data, status=status.HTTP_200_OK)
+    
+# Q here is an inbuilt funtion to query in django
     
 class ProductSearch(APIView):
     def post(self, request):
